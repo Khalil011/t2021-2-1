@@ -1,0 +1,68 @@
+Problem 1:
+#include<iostream>
+#include <math.h>
+using namespace std;
+//Calculator class
+class Calculator {
+    double firstNum, secNum;
+public:
+    void get() {
+        cout << "Enter First Number: ";
+        cin >> firstNum;
+        cout << "Enter Second Number: ";
+        cin >> secNum;
+    }
+    double add() {
+        return firstNum + secNum;
+    }
+    double sub() {
+        return firstNum - secNum;
+    }
+    double mul() {
+        return firstNum * secNum;
+    }
+    double div() {
+        if (secNum == 0) {
+            cout << "Divison By Zero" << endl;
+            break;
+        }
+        else {
+            return firstNum / secNum;
+        }
+    }
+};
+int main() {
+    int ch;
+    Calculator cal; // calculator object
+    cout << "Enter 1 Add 2 Numbers"
+        << "\nEnter 2 Subtract 2 Numbers"
+        << "\nEnter 3 Multiply 2 Numbers"
+        << "\nEnter 4 Divide 2 Numbers"
+        << "\nEnter 0 To Exit"
+        << "\n";
+    do {
+        cout << "\nEnter Choice: ";
+        cin >> ch;
+        switch (ch) {
+        case 1:
+            cal.get();
+            cout << "Result: " << cal.add() << endl;
+            break;
+        case 2:
+            cal.get();
+            cout << "Result: " << cal.sub() << endl;
+            break;
+        case 3:
+            cal.get();
+            cout << "Result: " << cal.mul() << endl;
+            break;
+        case 4:
+            cal.get();
+            cout << "Result: " << cal.div() << endl;
+            break;
+        }
+    } while (ch >= 1 && ch <= 4);
+    return 0;
+}
+
+
